@@ -1,0 +1,15 @@
+Code la fractole Julia et aussi la Manderlot
+Il faut make d'abord la minilibx et ensutie compile avec notre main en fessant 
+cc *.c -I minilibx-linux -L minilibx-linux -lmlx -lXext -lX11 (Pour Linux)
+
+######### AFFICHAGE DE LA MLX #########
+utiliser les header la la mlx avec #inlcude "mlx.h"
+
+1. initialisé la mlx avec mlx_init(); qui elle renvoie un void pointeur.
+
+2. creation de la nouvelle fenetre avec mlx_new_windows();
+	elle contient en entrée mlx notre void pointeur crée au debut ensuite
+	la taille, exemple 550 sur 500 et ensutie on lui donne un nom a notre
+	mlx.
+3. pour finir on utilise mlx_loop qui va nous aidé a zoomé avec la souris(je
+pense)
