@@ -3,6 +3,7 @@ Il faut make d'abord la minilibx et ensutie compile avec notre main en fessant
 cc *.c -I minilibx-linux -L minilibx-linux -lmlx -lXext -lX11 (Pour Linux)
 
 ######### AFFICHAGE DE LA MLX #########
+LINUX
 utiliser les header la la mlx avec #inlcude "mlx.h"
 
 1. initialisé la mlx avec mlx_init(); qui elle renvoie un void pointeur.
@@ -13,3 +14,5 @@ utiliser les header la la mlx avec #inlcude "mlx.h"
 	mlx.
 3. pour finir on utilise mlx_loop qui va nous aidé a zoomé avec la souris(je
 pense)
+MAC OS
+   cc *.c -I minilibx_opengl_20191021 -L minilibx_opengl_20191021 -lmlx -framework OpenGL -framework AppKit

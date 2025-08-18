@@ -6,7 +6,7 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/13 16:14:38 by britela-          #+#    #+#              #
-#    Updated: 2025/08/13 16:54:06 by britela-         ###   ########.fr        #
+#    Updated: 2025/08/18 22:39:32 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ ifeq ($(UNAME_S), Linux)
 else
     OS = MAC
     MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit -L minilibx/
+   -I minilibx_opengl_20191021 -L minilibx_opengl_20191021 -lmlx -framework OpenGL -framework AppKit
 endif
 
 RM = rm -rf
