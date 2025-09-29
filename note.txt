@@ -16,3 +16,14 @@ utiliser les header la la mlx avec #inlcude "mlx.h"
 pense)
 MAC OS
    cc *.c -I minilibx_opengl_20191021 -L minilibx_opengl_20191021 -lmlx -framework OpenGL -framework AppKit
+
+
+À quoi servent -I, -L, -l et -framework ?
+
+-I <dir> : ajoute un chemin d’en-têtes (où trouver mlx.h).
+
+-L <dir> : ajoute un chemin de bibliothèques (où trouver libmlx.a ou libmlx.dylib).
+
+-lmlx : lie la bibliothèque nommée mlx (le linker cherche libmlx.* dans les dossiers fournis par -L).
+
+-framework OpenGL -framework AppKit : lie les Frameworks systèmes de macOS (OpenGL pour le
