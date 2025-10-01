@@ -6,11 +6,13 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 10:44:18 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/01 10:45:39 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/01 12:39:01 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
+
+# include <stdio.h>
 
 #endif

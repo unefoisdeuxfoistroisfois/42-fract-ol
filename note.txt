@@ -1,6 +1,9 @@
-Code la fractole Julia et aussi la Manderlot
 Il faut make d'abord la minilibx et ensutie compile avec notre main en fessant 
-cc *.c -I minilibx-linux -L minilibx-linux -lmlx -lXext -lX11 (Pour Linux)
+- cc *.c -I minilibx-linux -L minilibx-linux -lmlx -lXext -lX11 (Pour Linux)
+parfait si tu fais #include "mlx.h
+
+- cc *.c -Lminilibx-linux -lmlx_Linux -lX11 -lXext
+parfait si tu fais #include "minilibx-linux/mlx.h
 
 ######### AFFICHAGE DE LA MLX #########
 LINUX
