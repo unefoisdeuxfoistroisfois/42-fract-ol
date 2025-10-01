@@ -6,11 +6,10 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/13 16:14:38 by britela-          #+#    #+#              #
-#    Updated: 2025/08/21 22:02:58 by britela-         ###   ########.fr        #
+#    Updated: 2025/10/01 09:53:12 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# ---- Makefile ultra-minimal (test MLX) ----
 
 CC      = cc
 NAME    = fractol

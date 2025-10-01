@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 16:55:19 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/01 10:15:50 by britela-         ###   ########.fr       */
+/*   Created: 2025/10/01 10:44:18 by britela-          #+#    #+#             */
+/*   Updated: 2025/10/01 10:45:39 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
-int	main()
-{
-	void	*mlx_ptr;//car la mlx renvoie un void
-	void	*win_ptr;// renovie l'identifiant de la nouvelle fentrre
-
-	mlx_ptr = mlx_init();
-	win_ptr = mlx_new_window(mlx_ptr, 500, 500, "unefoisdeuxfoistroisfois");//ouvrire une fentere
-	mlx_loop(mlx_ptr);
-	
-	return (0);
-}
+#endif
