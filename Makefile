@@ -6,13 +6,13 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/13 16:14:38 by britela-          #+#    #+#              #
-#    Updated: 2025/10/01 14:47:19 by britela-         ###   ########.fr        #
+#    Updated: 2025/10/03 17:10:47 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 NAME = fractol
-SRC = main.c
+SRC = mlx.c
 OBJ = $(SRC:.c=.o)
 
 # Détection OS
