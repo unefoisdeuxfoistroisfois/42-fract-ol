@@ -6,7 +6,7 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/13 16:14:38 by britela-          #+#    #+#              #
-#    Updated: 2025/10/09 00:08:34 by britela-         ###   ########.fr        #
+#    Updated: 2025/10/10 16:51:32 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = fractol
 SRC = mlx.c
 OBJ = $(SRC:.c=.o)
 
-# ASCII Art Logo
 LOGO = "\033[1;38;5;208m\
 ░▒▓████████▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░▒▓████████▓▒░▒▓██████▓▒░░▒▓█▓▒░\n\
 ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░\n\
@@ -51,9 +50,15 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(MLX_A)
 	@printf "\n"
+	@printf "\n"
+	@printf "\n"
 	@printf $(LOGO)
+	@printf "\n"
+	@printf "\n"
+	@printf "\n"
+	@echo "\033[1;32mLIASON DES OBJETS\033[0m"
 	$(CC) $(OBJ) $(LDFLAGS) -o $@
-	@echo "Built $(NAME) for $(OS)"
+	@echo "\033[1;32mCOMPILATION REUSSIE DE $(NAME) POUR $(OS) \033[0m"
 
 # .c -> .o
 %.o: %.c
@@ -67,7 +72,7 @@ clean:
 	$(RM) $(OBJ)
 	-$(MAKE) -C $(MLX_DIR) clean
 
-fclean: clean
+fclean: clean 
 	$(RM) $(NAME)
 	-$(RM) $(MLX_A)
 
