@@ -6,12 +6,13 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/23 07:54:52 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/23 10:02:29 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "fractol.h"
+#include <unistd.h>
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
@@ -19,6 +20,25 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	deal_key(int key, void *param)
+{
+	(void)key;
+	(void)param;
+#ifdef __linux__
+	if (key == 65307) // ESC Linux
+#else
+	if (key == 53)    // ESC macOS
+#endif
+		exit(0);
+	ft_putchar('x');
+	return (0);
 }
 
 int	main()
@@ -42,10 +62,14 @@ int	main()
 	&img.line_length, &img.endian);
 
 	my_mlx_pixel_put(&img, 100, 100, 0x00FF0000);
-	mlx_put_image_to_window(mlx_connection, mlx_init, img.img, 0, 0);
 
+	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
+
+
+	mlx_key_hook(mlx_window, deal_key, (void *)0);
 	mlx_loop(mlx_connection);
-//	mlx_destroy_window(mlx_connection,mlx_window);
+
+	mlx_destroy_window(mlx_connection,mlx_window);
 	free(mlx_connection);
 	return (0);
 }
