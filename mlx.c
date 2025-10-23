@@ -6,17 +6,26 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/11 11:58:30 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/23 07:54:52 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "fractol.h"
 
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
+}
+
 int	main()
 {
 	void	*mlx_connection;//car la mlx renvoie un void
 	void	*mlx_window;// renovie l'identifiant de la nouvelle fentrre
+	t_data	img;
 
 	mlx_connection = mlx_init();
 	if (mlx_connection == NULL)
@@ -28,10 +37,15 @@ int	main()
 	{
 			return (-1);
 	}
-	mlx_pixel_put(mlx_connection, mlx_window, 250, 250, 0xFFFFFF);
+	img.img = mlx_new_image(mlx_connection, WIDTH, HEIGHT);
+	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
+	&img.line_length, &img.endian);
+
+	my_mlx_pixel_put(&img, 100, 100, 0x00FF0000);
+	mlx_put_image_to_window(mlx_connection, mlx_init, img.img, 0, 0);
 
 	mlx_loop(mlx_connection);
-	mlx_destroy_window(mlx_connection,mlx_window);
+//	mlx_destroy_window(mlx_connection,mlx_window);
 	free(mlx_connection);
 	return (0);
 }
