@@ -6,13 +6,14 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/24 14:57:23 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/24 18:20:09 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "fractol.h"
 #include <unistd.h>
+
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
@@ -22,6 +23,12 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
+int	close_window(void *param)
+{
+	(void)param;
+	exit(0);
+}
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
@@ -29,13 +36,8 @@ void	ft_putchar(char c)
 
 int	deal_key(int key, void *param)
 {
-	(void)key;
 	(void)param;
-#ifdef __linux__
-	if (key == 65307) // ESC Linux
-#else
-	if (key == 53)    // ESC macOS
-#endif
+	if (key == 65307 || key == 53)
 		exit(0);
 	ft_putchar('x');
 	return (0);
@@ -52,7 +54,7 @@ int	main()
 	{
 			return (-1);
 	}
-	mlx_window = mlx_new_window(mlx_connection, WIDTH, HEIGHT, "fractol");//ouvrire une fentere
+	mlx_window = mlx_new_window(mlx_connection, WIDTH, HEIGHT, "unefoisdeuxfoistroisfois");//ouvrire une fentere
 	if (mlx_window == NULL)
 	{
 			return (-1);
@@ -65,8 +67,8 @@ int	main()
 
 	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
 
-
-	mlx_key_hook(mlx_window, deal_key, (void *)0);
+	mlx_hook(mlx_window, 17, 0, close_window, NULL);     // Croix
+	mlx_key_hook(mlx_window, deal_key, (void *)0); //clavier
 	mlx_loop(mlx_connection);
 
 	mlx_destroy_window(mlx_connection,mlx_window);
