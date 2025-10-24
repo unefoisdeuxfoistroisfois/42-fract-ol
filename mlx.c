@@ -6,13 +6,12 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/24 18:20:09 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/24 19:02:13 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "fractol.h"
-#include <unistd.h>
 
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
