@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/23 10:02:29 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/24 14:57:23 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main()
 	{
 			return (-1);
 	}
-	mlx_window = mlx_new_window(mlx_connection, WIDTH, HEIGHT, "unefoisdeuxfoistroisfois");//ouvrire une fentere
+	mlx_window = mlx_new_window(mlx_connection, WIDTH, HEIGHT, "fractol");//ouvrire une fentere
 	if (mlx_window == NULL)
 	{
 			return (-1);
