@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/24 19:02:13 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/24 23:04:52 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int	main()
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 	&img.line_length, &img.endian);
 
+	//Mandelbrot
+//	mandelbrot(&img);
 	my_mlx_pixel_put(&img, 100, 100, 0x00FF0000);
 
 	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
