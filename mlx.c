@@ -6,13 +6,12 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/24 23:04:52 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/25 15:22:19 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "fractol.h"
-
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
@@ -36,7 +35,7 @@ void	ft_putchar(char c)
 int	deal_key(int key, void *param)
 {
 	(void)param;
-	if (key == 65307 || key == 53)
+	if (key == 65308 || key == 53) //linux || macos
 		exit(0);
 	ft_putchar('x');
 	return (0);
