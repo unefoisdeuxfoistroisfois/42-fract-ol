@@ -41,7 +41,7 @@ int main(void)
             }
             
             if (iter == max_iter)
-                printf("#");   // Le point appartient à l'ensemble
+                printf(".");   // Le point appartient à l'ensemble
             else
                 printf(" ");   // Le point diverge
             
