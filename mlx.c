@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/27 17:15:38 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:05:02 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-int	close_window(void *param)
+int	ft_close_window(void *param)
 {
 	(void)param;
+	printf("Croix cliqué\n");
 	exit(0);
+	return (0);
 }
 
 void	ft_putchar(char c)
@@ -32,10 +34,10 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	deal_key(int key, void *param)
+int	ft_key(int key, void *param)
 {
 	(void)param;
-	if (key == 65308 || key == 53) //linux || macos
+	if (key == 65307 || key == 53) //linux || macos
 		exit(0);
 	ft_putchar('x');
 	return (0);
@@ -67,8 +69,8 @@ int	main()
 
 	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
 
-	mlx_hook(mlx_window, 17, 0, close_window, NULL);     // Croix
-	mlx_key_hook(mlx_window, deal_key, (void *)0); //clavier
+	mlx_hook(mlx_window, 17, 0, ft_close_window, NULL);     // Croix
+	mlx_key_hook(mlx_window, , (void *)0); //clavier
 	mlx_loop(mlx_connection);
 
 	mlx_destroy_window(mlx_connection,mlx_window);
