@@ -13,7 +13,9 @@ int main(void)
     double zy;
     int iter;
     double tmp;
-    
+    double new_zx;
+    double new_zy;
+
     width = 80;
     height = 40;
     max_iter = 1000;
@@ -32,11 +34,14 @@ int main(void)
             zy = 0.0;
             iter = 0;
             
-            while (zx * zx + zy * zy < 4.0 && iter < max_iter)
+            while (zx * zx + zy * zy < 2 * 2 && iter < max_iter)
             {
-                tmp = zx * zx - zy * zy + a;
-                zy = 2.0 * zx * zy + b;
-                zx = tmp;
+		new_zx = (zx*zx - zy*zy) + a;  // x_{n+1}
+		new_zy = (2.0 * zx * zy) + b;  // y_{n+1}
+	
+		// maintenant seulement on met à jour
+		zx = new_zx;// pour pas utlise les ancinenen valeur 
+		zy = new_zy;
                 iter++;
             }
             
