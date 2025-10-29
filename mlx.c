@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/29 17:32:52 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/29 19:08:52 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,55 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
+}
+
+void	mandelbrot(t_data *img, int width, int height, int max_iter)
+{
+	int		y;
+	int		x;
+	double	a;
+	double	b;
+	double	zx;
+	double	zy;
+	double	new_zx;
+	double	new_zy;
+	int		iter;
+	int		color;
+	int		shade;
+
+	y = 0;
+	while (y < height)
+	{
+		x = 0;
+		while (x < width)
+		{
+			// même mapping que ton code ASCII
+			a = (x - width / 2.0) * 4.0 / width;
+			b = (y - height / 2.0) * 2.0 / height;
+
+			zx = 0.0;
+			zy = 0.0;
+			iter = 0;
+			while (zx * zx + zy * zy < 2 * 2 && iter < max_iter)
+			{
+				new_zx = (zx * zx - zy * zy) + a;  // x_{n+1}
+				new_zy = (2.0 * zx * zy) + b;      // y_{n+1}
+				zx = new_zx;
+				zy = new_zy;
+				iter++;
+			}
+			if (iter == max_iter)
+				color = 0xfa9f16;
+			else
+			{
+				shade = (255 * iter) / max_iter;       // dégradé de gris
+				color = (shade << 16) | (shade << 8) | shade;
+			}
+			my_mlx_pixel_put(img, x, y, color);
+			x++;
+		}
+		y++;
+	}
 }
 
 int	ft_close_window(void *param)
@@ -63,9 +112,8 @@ int	main()
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 	&img.line_length, &img.endian);
 
-	//Mandelbrot
-//	mandelbrot(&img);
-	my_mlx_pixel_put(&img, 100, 100, 0x00FF0000);
+
+	mandelbrot(&img, WIDTH, HEIGHT, MAX_ITER);
 
 	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
 
