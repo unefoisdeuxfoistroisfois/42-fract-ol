@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/24 19:02:22 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:57:06 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # define HEIGHT 800
 #endif
 
+# define MAX_ITER  100
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -32,5 +34,6 @@ typedef struct	s_data {
 	int		line_length;
 	int		endian;
 }				t_data;
+
 
 #endif
