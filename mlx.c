@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/29 17:05:02 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:32:52 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 int	ft_close_window(void *param)
 {
 	(void)param;
-	printf("Croix cliqué\n");
+	printf("Vous avez quitté");
 	exit(0);
 	return (0);
 }
@@ -70,7 +70,7 @@ int	main()
 	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
 
 	mlx_hook(mlx_window, 17, 0, ft_close_window, NULL);     // Croix
-	mlx_key_hook(mlx_window, , (void *)0); //clavier
+	mlx_key_hook(mlx_window, ft_key, NULL); //clavier
 	mlx_loop(mlx_connection);
 
 	mlx_destroy_window(mlx_connection,mlx_window);
