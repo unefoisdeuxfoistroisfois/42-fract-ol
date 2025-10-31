@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/29 19:08:52 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/30 22:29:11 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	mandelbrot(t_data *img, int width, int height, int max_iter)
 		x = 0;
 		while (x < width)
 		{
-			// même mapping que ton code ASCII
 			a = (x - width / 2.0) * 4.0 / width;
 			b = (y - height / 2.0) * 2.0 / height;
 
