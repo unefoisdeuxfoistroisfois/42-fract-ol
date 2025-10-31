@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/10/30 22:29:11 by britela-         ###   ########.fr       */
+/*   Updated: 2025/10/31 16:15:20 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,18 +99,11 @@ int	main()
 
 	mlx_connection = mlx_init();
 	if (mlx_connection == NULL)
-	{
-			return (-1);
-	}
 	mlx_window = mlx_new_window(mlx_connection, WIDTH, HEIGHT, "fractol");//ouvrire une fentere
 	if (mlx_window == NULL)
-	{
-			return (-1);
-	}
 	img.img = mlx_new_image(mlx_connection, WIDTH, HEIGHT);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 	&img.line_length, &img.endian);
-
 
 	mandelbrot(&img, WIDTH, HEIGHT, MAX_ITER);
 
