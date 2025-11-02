@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/02 16:24:16 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/02 16:29:17 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ typedef struct	s_mandelbrot
 	int	color;
 	int	shade;
 }		t_mandelbrot;
-	
 
 //mandel.c
 void	mandelbrot(t_data *img, int width, int height, int max_iter);
