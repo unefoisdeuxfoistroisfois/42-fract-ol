@@ -4,15 +4,6 @@ void	mandelbrot(t_data *img, int width, int height, int max_iter)
 {
 	int		y;
 	int		x;
-	double	a;
-	double	b;
-	double	zx;
-	double	zy;
-	double	new_zx;
-	double	new_zy;
-	int		iter;
-	int		color;
-	int		shade;
 
 	y = 0;
 	while (y < height)
