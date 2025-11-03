@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/02 16:29:17 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/03 20:33:33 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ typedef struct	s_mandelbrot
 
 //mandel.c
 void	mandelbrot(t_data *img, int width, int height, int max_iter);
+void	ft_init(t_mandelbrot *m, int x, int y);
+void	ft_calcul(t_mandelbrot *m, int max_iter);
+void	ft_color(t_mandelbrot *m, int max_iter);
 
 //event.c
 int	ft_close_window(void *param);
