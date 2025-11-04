@@ -6,7 +6,7 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/11 11:58:37 by britela-          #+#    #+#              #
-#    Updated: 2025/10/31 18:06:38 by britela-         ###   ########.fr        #
+#    Updated: 2025/11/04 20:51:08 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,13 @@ else
 	MLX_LINK = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
 endif
 
+# ft_printf
+PRINTF_DIR  = ft_printf
+PRINTF = $(PRINTF_DIR)/libftprintf.a
+
 # Flags
-CFLAGS = -Wall -Wextra -Werror -g $(MLX_INC)
-LDFLAGS = $(MLX_LINK)
+CFLAGS = -Wall -Wextra -Werror -g $(MLX_INC) -I$(PRINTF_DIR)
+LDFLAGS = $(MLX_LINK) -L$(PRINT_DIR) -lftprintf
 
 all: $(NAME)
 
@@ -68,13 +72,19 @@ $(NAME): $(OBJ) $(MLX_A)
 $(MLX_A):
 	$(MAKE) -C $(MLX_DIR)
 
+# Build de ft_printf
+$(PRINTF):
+	$(MAKE) -C $(PRINTF_DIR)
+
 clean:
 	$(RM) $(OBJ)
-	-$(MAKE) -C $(MLX_DIR) clean
+	$(MAKE) -C $(MLX_DIR) clean
+	$(MAKE) -C $(PRINTF_DIR) clean
 
 fclean: clean 
 	$(RM) $(NAME)
-	-$(RM) $(MLX_A)
+	$(RM) $(MLX_A)
+	$(MAKE) -C $(PRINTF_DIR) clean
 
 re: fclean all
 
