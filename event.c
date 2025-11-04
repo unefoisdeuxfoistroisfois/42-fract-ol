@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:25:07 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/03 20:25:10 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/05 00:00:34 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_key(int key, void *param)
 	(void)param;
 	if (key == 65307 || key == 53) //linux || macos
 		exit(0);
-	write (1, "x", 1);
+	ft_printf ("x");
 	return (0);
 }
