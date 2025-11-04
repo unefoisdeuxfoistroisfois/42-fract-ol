@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/03 20:33:33 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/05 00:06:53 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+#include "ft_printf/ft_printf.h"
 
 typedef struct	s_data {
 	void	*img;
