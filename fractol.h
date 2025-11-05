@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/05 00:06:53 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:36:33 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,17 @@ void	ft_init(t_mandelbrot *m, int x, int y);
 void	ft_calcul(t_mandelbrot *m, int max_iter);
 void	ft_color(t_mandelbrot *m, int max_iter);
 
+//julia .c
+void	julia();
+
 //event.c
 int	ft_close_window(void *param);
 int	ft_key(int key, void *param);
 
 //mlx.c
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	ft_args(int argc, char **argv);
+
+//libft
+int	ft_strcmp(char *s1, char *s2);
 #endif

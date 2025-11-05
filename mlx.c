@@ -6,22 +6,50 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/04 23:56:29 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:20:17 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-//void	ft_args(int argc, char **argv)
-//{
-//	if (argc == 2)
-//	{
-//	}
-//	else
-//	{
-//	}
-//}
-//
+void	ft_args(int argc, char **argv, t_data *img)
+{
+	int	infini;
+
+	infini = 1;
+	while (infini)
+	{
+		if (argc != 2)
+		{
+			ft_printf ("Format correct : %s Mandlebrot", argv[0]);
+			ft_printf ("Format correct : %s Julia", argv[0]);
+		}
+		else if (argc == 2)
+		{
+			ft_printf ("Entre un factal");
+			while (infini)
+			{
+				if (ft_strcmp(argv[1], "mandelbrot") == 0)
+				{
+					mandelbrot(&img, WIDTH, HEIGHT, MAX_ITER);
+					exit(0);
+				}
+				else if (ft_strcmp(argv[1], "Julia") == 0)
+				{
+					julia();
+					exit(0);
+				}
+				else
+				{
+					ft_printf("Fractal Inconnue: %s mandelbrot", argv[0]);
+					ft_printf ("Format correct : %s Mandlebrot", argv[0]);
+					ft_printf ("Format correct : %s Julia", argv[0]);
+				}
+			}
+		}
+	}
+}
+
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
@@ -30,8 +58,11 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-int	main()
+int	main(int argc, char **argv)
 {
+	int	n;
+	char	*mot;
+
 	void	*mlx_connection;//car la mlx renvoie un void
 	void	*mlx_window;// renovie l'identifiant de la nouvelle fentrre
 	t_data	img;
@@ -42,7 +73,7 @@ int	main()
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 	&img.line_length, &img.endian);
 
-	mandelbrot(&img, WIDTH, HEIGHT, MAX_ITER);
+	ft_args(n, &mot, &img);
 
 	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
 
