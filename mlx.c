@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/05 18:20:24 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:44:16 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	main(int argc, char **argv)
 {
 	void	*mlx_connection;//car la mlx renvoie un void
 	void	*mlx_window;// renovie l'identifiant de la nouvelle fentrre
-	t_data	img;
 	int	choice;
+	t_data	img;
 
 	choice = ft_args(argc, argv);
 	if (choice == -1)
