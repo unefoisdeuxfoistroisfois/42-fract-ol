@@ -6,11 +6,11 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:46:54 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/05 14:55:06 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:54:09 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fractol.h>
+#include "fractol.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

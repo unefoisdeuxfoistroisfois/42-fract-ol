@@ -6,11 +6,11 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:07:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/05 15:08:01 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:53:46 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fractol.h>
+#include "fractol.h"
 
 void	julia()
 {

@@ -6,7 +6,7 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/11 11:58:37 by britela-          #+#    #+#              #
-#    Updated: 2025/11/05 15:19:51 by britela-         ###   ########.fr        #
+#    Updated: 2025/11/05 17:02:45 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ CFLAGS = -Wall -Wextra -Werror -g $(MLX_INC) -I$(PRINTF_DIR)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(MLX_A)
+$(NAME): $(OBJ) $(MLX_A) $(PRINTF) 
 	@printf "\n"
 	@printf "\n"
 	@printf "\n"

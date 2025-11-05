@@ -6,48 +6,32 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/05 16:20:17 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:20:24 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_args(int argc, char **argv, t_data *img)
+int	ft_args(int argc, char **argv)
 {
-	int	infini;
-
-	infini = 1;
-	while (infini)
+	ft_printf("Choisie entre Mandelbrot ou Julia\n");
+	if (argc == 2)
 	{
-		if (argc != 2)
+		if (ft_strcmp(argv[1], "Mandelbrot") == 0)
 		{
-			ft_printf ("Format correct : %s Mandlebrot", argv[0]);
-			ft_printf ("Format correct : %s Julia", argv[0]);
+			return (1);
 		}
-		else if (argc == 2)
+		else if (ft_strcmp(argv[1], "Julia") == 0)
 		{
-			ft_printf ("Entre un factal");
-			while (infini)
-			{
-				if (ft_strcmp(argv[1], "mandelbrot") == 0)
-				{
-					mandelbrot(&img, WIDTH, HEIGHT, MAX_ITER);
-					exit(0);
-				}
-				else if (ft_strcmp(argv[1], "Julia") == 0)
-				{
-					julia();
-					exit(0);
-				}
-				else
-				{
-					ft_printf("Fractal Inconnue: %s mandelbrot", argv[0]);
-					ft_printf ("Format correct : %s Mandlebrot", argv[0]);
-					ft_printf ("Format correct : %s Julia", argv[0]);
-				}
-			}
+			return (2);
+		}
+		else
+		{
+			ft_printf ("Format correct : %s <NomFractal>", argv[0]);
+			return (-1);
 		}
 	}
+	return (-1);
 }
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
@@ -60,12 +44,14 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 int	main(int argc, char **argv)
 {
-	int	n;
-	char	*mot;
-
 	void	*mlx_connection;//car la mlx renvoie un void
 	void	*mlx_window;// renovie l'identifiant de la nouvelle fentrre
 	t_data	img;
+	int	choice;
+
+	choice = ft_args(argc, argv);
+	if (choice == -1)
+		return (-1);
 
 	mlx_connection = mlx_init();
 	mlx_window = mlx_new_window(mlx_connection, WIDTH, HEIGHT, "fractol");//ouvrire une fentere
@@ -73,8 +59,11 @@ int	main(int argc, char **argv)
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 	&img.line_length, &img.endian);
 
-	ft_args(n, &mot, &img);
-
+	if (choice == 1)
+		mandelbrot(&img, WIDTH, HEIGHT, MAX_ITER);
+	else if (choice == 2)
+		julia();
+	
 	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
 
 	mlx_hook(mlx_window, 17, 0, ft_close_window, NULL);     // Croix

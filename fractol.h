@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/05 15:36:33 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:57:37 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_key(int key, void *param);
 
 //mlx.c
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-void	ft_args(int argc, char **argv);
+int	ft_args(int argc, char **argv);
 
 //libft
 int	ft_strcmp(char *s1, char *s2);
