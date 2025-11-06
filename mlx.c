@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/05 18:44:16 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/06 10:35:40 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int	main(int argc, char **argv)
 	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
 
 	mlx_hook(mlx_window, 17, 0, ft_close_window, NULL);     // Croix
+	mlx_mouse_hook(mlx_window, ft_mouse, NULL);             // clic/molette
 	mlx_key_hook(mlx_window, ft_key, NULL); //clavier
 	mlx_loop(mlx_connection);
 
