@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/06 10:44:50 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/07 13:54:34 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@
 typedef struct	s_data {
 	void	*img;
 	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_data;
+	int	bits_per_pixel;
+	int	line_length;
+	int	endian;
+}		t_data;
 
 //structure pour la mandelbrot
 typedef struct	s_mandelbrot
@@ -51,9 +51,21 @@ typedef struct	s_mandelbrot
 	int	shade;
 }		t_mandelbrot;
 
+//structure pour le deplacement
+typedef struct s_mouvement
+{
+	double	r1;
+	double	r2;
+	double	i1;
+	double	i2;
+	void	*mlx;
+	void	*win;
+	t_data	img;
+}	t_mouvement;
+
 //mandel.c
-void	mandelbrot(t_data *img, int width, int height, int max_iter);
-void	ft_init(t_mandelbrot *m, int x, int y);
+void	mandelbrot(t_data *img, t_mouvement *move);
+void	ft_init(t_mandelbrot *m, double x, double y, t_mouvement *move);
 void	ft_calcul(t_mandelbrot *m, int max_iter);
 void	ft_color(t_mandelbrot *m, int max_iter);
 

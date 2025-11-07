@@ -6,16 +6,16 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:32:34 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/06 09:15:25 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/07 13:57:29 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_init(t_mandelbrot *m, int x, int y)
+void	ft_init(t_mandelbrot *m, double x, double y, t_mouvement *move)
 {
-	m->a = (x - WIDTH / 2.0) * 3.0 / WIDTH - 0.5 ;
-	m->b = (y - HEIGHT / 2.0) * 3.0 / HEIGHT;
+	m->a = move->r1 + x * (move->r2 - move->r1) / WIDTH;
+	m->b = move->i1 + y * (move->i2 - move->i1) / HEIGHT;
 	m->zx = 0.0;
 	m->zy = 0.0;
 	m->iter = 0;
@@ -47,21 +47,21 @@ void	ft_color(t_mandelbrot *m, int max_iter)
 	}
 }
 
-void	mandelbrot(t_data *img, int width, int height, int max_iter)
+void	mandelbrot(t_data *img, t_mouvement *move)
 {
-	int				y;
-	int				x;
+	double				y;
+	double				x;
 	t_mandelbrot	m;
 
 	y = 0;
-	while (y < height)
+	while (y < HEIGHT)
 	{
 		x = 0;
-		while (x < width)
+		while (x < WIDTH)
 		{
-			ft_init(&m, x, y);
-			ft_calcul(&m, max_iter);
-			ft_color(&m, max_iter);
+			ft_init(&m, x, y, move);
+			ft_calcul(&m, MAX_ITER);
+			ft_color(&m, MAX_ITER);
 			my_mlx_pixel_put(img, x, y, m.color);
 			x++;
 		}

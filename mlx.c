@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/06 10:35:40 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/07 13:52:52 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_args(int argc, char **argv)
 {
-	ft_printf("Choisie entre Mandelbrot ou Julia\n");
 	if (argc == 2)
 	{
 		if (ft_strcmp(argv[1], "Mandelbrot") == 0)
@@ -27,6 +26,7 @@ int	ft_args(int argc, char **argv)
 		}
 		else
 		{
+			ft_printf("Choisie entre Mandelbrot ou Julia\n");
 			ft_printf ("Format correct : %s <NomFractal>", argv[0]);
 			return (-1);
 		}
@@ -47,7 +47,7 @@ int	main(int argc, char **argv)
 	void	*mlx_connection;//car la mlx renvoie un void
 	void	*mlx_window;// renovie l'identifiant de la nouvelle fentrre
 	int	choice;
-	t_data	img;
+	t_mouvement	move;
 
 	choice = ft_args(argc, argv);
 	if (choice == -1)
@@ -55,20 +55,26 @@ int	main(int argc, char **argv)
 
 	mlx_connection = mlx_init();
 	mlx_window = mlx_new_window(mlx_connection, WIDTH, HEIGHT, "fractol");//ouvrire une fentere
-	img.img = mlx_new_image(mlx_connection, WIDTH, HEIGHT);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
-	&img.line_length, &img.endian);
+	move.img.img = mlx_new_image(mlx_connection, WIDTH, HEIGHT);
+	move.img.addr = mlx_get_data_addr(move.img.img, &move.img.bits_per_pixel,
+	&move.img.line_length, &move.img.endian);
+
+	move.r1 = -2.5;
+	move.r2 = 1.5;
+	move.i1 = -2.0;
+	move.i2 = 2.0;
+	move.mlx = mlx_connection;  // ← AJOUT
+	move.win = mlx_window;    
 
 	if (choice == 1)
-		mandelbrot(&img, WIDTH, HEIGHT, MAX_ITER);
+		mandelbrot(&move.img, &move);
 	else if (choice == 2)
 		julia();
 	
-	mlx_put_image_to_window(mlx_connection, mlx_window, img.img, 0, 0);
-
-	mlx_hook(mlx_window, 17, 0, ft_close_window, NULL);     // Croix
-	mlx_mouse_hook(mlx_window, ft_mouse, NULL);             // clic/molette
-	mlx_key_hook(mlx_window, ft_key, NULL); //clavier
+	mlx_put_image_to_window(mlx_connection, mlx_window, move.img.img, 0, 0);
+	mlx_hook(mlx_window, 17, 0, ft_close_window, &move);     // Croix
+	mlx_mouse_hook(mlx_window, ft_mouse, &move);             // clic/molette
+	mlx_key_hook(mlx_window, ft_key, &move); //clavier
 	mlx_loop(mlx_connection);
 
 	mlx_destroy_window(mlx_connection,mlx_window);
