@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:25:07 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/07 14:09:25 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/07 15:28:34 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	ft_move(t_mouvement *move, int key)
 	}
 	else if (key == 65361 || key == 123)
 	{
-		move->r1 = move->i1 - step;
-		move->r2 = move->i2 - step;
+		move->r1 = move->r1 - step;
+		move->r2 = move->r2 - step;
 	}
 	else if (key == 65363 || key == 124)
 	{
-		move->r1 = move->i1 + step;
-		move->r2 = move->i2 + step;
+		move->r1 = move->r1 + step;
+		move->r2 = move->r2 + step;
 	}
 }
 
