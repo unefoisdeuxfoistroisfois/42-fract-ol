@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/07 13:52:52 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/08 16:07:28 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int argc, char **argv)
 	move.r2 = 1.5;
 	move.i1 = -2.0;
 	move.i2 = 2.0;
-	move.mlx = mlx_connection;  // ← AJOUT
+	move.mlx = mlx_connection;
 	move.win = mlx_window;    
 
 	if (choice == 1)
