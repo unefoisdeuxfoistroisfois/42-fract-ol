@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:25:07 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/08 16:10:16 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/08 23:26:11 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,14 @@ int	ft_key(int key, void *param)
 		key == 65361 || key == 123 || key == 65363 || key == 124)
 	{
 		ft_move(move, key);
-		mandelbrot(&move->img, move);
+		if (move->choice == 1)
+		{
+			mandelbrot(&move->img, move);
+		}
+		else if (move->choice == 2)
+		{
+			julia(&move->img, move);
+		}
 		mlx_put_image_to_window(move->mlx, move->win, move->img.img, 0, 0);
 	}
 	return (0);
@@ -101,7 +108,10 @@ int	ft_mouse(int key_mouse, int x, int y, void *param)
 	else
 		return (0);
 	ft_zoom(move, zoom);
-	mandelbrot(&move->img, move);
+	if (move->choice == 1)
+		mandelbrot(&move->img, move);
+	else if (move->choice == 2)
+		julia(&move->img, move);
 	mlx_put_image_to_window(move->mlx, move->win, move->img.img, 0, 0);
 	return (0);
 }

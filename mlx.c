@@ -6,31 +6,36 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/08 16:07:28 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/08 23:22:36 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	ft_args(int argc, char **argv)
+int	ft_args(int argc, char **argv, t_mouvement *move)
 {
-	if (argc == 2)
+	if (argc < 2)
 	{
-		if (ft_strcmp(argv[1], "Mandelbrot") == 0)
+		ft_printf ("Format correct : %s <NomFractal>", argv[0]);
+		return (-1);
+	}
+	if (ft_strcmp(argv[1], "Mandelbrot") == 0)
+		return (1);
+	else if (ft_strcmp(argv[1], "Julia") == 0)
+	{
+		if (argc == 4)
 		{
-			return (1);
-		}
-		else if (ft_strcmp(argv[1], "Julia") == 0)
-		{
-			return (2);
+			move->julia_cr = ft_atof(argv[2]);
+			move->julia_ci = ft_atof(argv[3]);
 		}
 		else
 		{
-			ft_printf("Choisie entre Mandelbrot ou Julia\n");
-			ft_printf ("Format correct : %s <NomFractal>", argv[0]);
-			return (-1);
+			move->julia_cr = -0.7;
+			move->julia_ci = 0.27015;
 		}
+		return (2);
 	}
+	ft_printf("Fractales disponibles: Mandelbrot, Julia\n");
 	return (-1);
 }
 
@@ -49,9 +54,11 @@ int	main(int argc, char **argv)
 	int	choice;
 	t_mouvement	move;
 
-	choice = ft_args(argc, argv);
+	choice = ft_args(argc, argv, &move);
 	if (choice == -1)
 		return (-1);
+
+	move.choice = choice;
 
 	mlx_connection = mlx_init();
 	mlx_window = mlx_new_window(mlx_connection, WIDTH, HEIGHT, "fractol");//ouvrire une fentere
@@ -69,7 +76,7 @@ int	main(int argc, char **argv)
 	if (choice == 1)
 		mandelbrot(&move.img, &move);
 	else if (choice == 2)
-		julia();
+		julia(&move.img, &move);
 	
 	mlx_put_image_to_window(mlx_connection, mlx_window, move.img.img, 0, 0);
 	mlx_hook(mlx_window, 17, 0, ft_close_window, &move);     // Croix
