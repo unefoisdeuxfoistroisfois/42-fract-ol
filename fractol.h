@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/07 13:54:34 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/08 15:48:29 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,9 @@ void	julia();
 
 //event.c
 int	ft_close_window(void *param);
+void	ft_move(t_mouvement *move, int key);
 int	ft_key(int key, void *param);
+void	ft_zoom(t_mouvement *move, double zoom);
 int	ft_mouse(int key_mouse, int x, int y, void *param);
 
 //mlx.c
