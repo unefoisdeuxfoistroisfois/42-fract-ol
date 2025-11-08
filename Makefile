@@ -6,7 +6,7 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/11 11:58:37 by britela-          #+#    #+#              #
-#    Updated: 2025/11/05 17:02:45 by britela-         ###   ########.fr        #
+#    Updated: 2025/11/08 12:04:00 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ clean:
 fclean: clean 
 	$(RM) $(NAME)
 	$(RM) $(MLX_A)
-	$(MAKE) -C $(PRINTF_DIR) clean
+	$(MAKE) -C $(PRINTF_DIR) fclean
 
 re: fclean all
 
