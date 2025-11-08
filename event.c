@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:25:07 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/07 15:28:34 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/08 11:56:28 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ int	ft_mouse(int key_mouse, int x, int y, void *param)
 	(void)x;
 	(void)y;
 	if (key_mouse == 4)
-		ft_printf("ZOOM +");
+		ft_printf("ZOOM +\n");
 	else if (key_mouse == 5)
-		ft_printf("ZOMM -");
+		ft_printf("ZOOM -\n");
 	return (0);
 }
