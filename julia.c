@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:07:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/09 14:31:28 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/10 00:45:04 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,20 @@ void	ft_julia_calcul(t_julia *j, int max_iter)
 
 void	ft_julia_color(t_julia *j, int max_iter)
 {
+	int	r;
+	int	g;
+	int	b;
+
 	if (j->iter == max_iter)
+	{
 		j->color = 0x000000;
+	}
 	else
 	{
-		j->shade = (255 * j->iter) / max_iter;
-		j->color = (j->shade << 16) | (j->shade << 8) | j->shade;
+		r = (j->iter * 8) % 256;
+		g = (j->iter * 4) % 256;
+		b = (j->iter * 2) % 256;
+		j->color = (r << 16) | (g << 8) | b;
 	}
 }
 

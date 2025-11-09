@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:32:34 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/09 14:30:57 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/10 00:19:12 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,20 @@ void	ft_calcul(t_mandelbrot *m, int max_iter)
 
 void	ft_color(t_mandelbrot *m, int max_iter)
 {
+	int	r;
+	int	g;
+	int	b;
+
 	if (m->iter == max_iter)
 	{
 		m->color = 0x000000;
 	}
 	else
 	{
-		m->shade = (255 * m->iter) / max_iter;
-		m->color = (m->shade << 16) | (m->shade << 8) | m->shade;
+		r = (m->iter * 32) % 256;
+		g = (m->iter * 16) % 256;
+		b = (m->iter * 48) % 256;
+		m->color = (r << 16) | (g << 8) | b;
 	}
 }
 
