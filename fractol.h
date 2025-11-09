@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/09 12:55:59 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 14:14:40 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,11 @@ void	ft_run_fractol(t_mouvement *move, void *mlx, void *win, int choice);
 int	ft_strcmp(char *s1, char *s2);
 double	ft_atoi_julia2(char *str, int i);
 double	ft_atoi_julia(char *str);
+
+//args
+
+int	ft_check_mandelbrot(int argc, char **argv);
+int	ft_check_julia(int argc, char **argv, t_mouvement *move);
+int	ft_args(int argc, char **argv, t_mouvement *move);
 
 #endif

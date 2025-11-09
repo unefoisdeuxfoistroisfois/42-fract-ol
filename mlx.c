@@ -6,41 +6,11 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/09 12:56:26 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 14:15:18 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-int	ft_args(int argc, char **argv, t_mouvement *move)
-{
-	if (argc < 2)
-	{
-		ft_printf("Format correct : %s Mandelbrot\n", argv[0]);
-		ft_printf("Format correct : %s Julia <r> <i>\n", argv[0]);
-		return (-1);
-	}
-	if (ft_strcmp(argv[1], "Mandelbrot") == 0)
-		return (1);
-	else if (ft_strcmp(argv[1], "Julia") == 0)
-	{
-		if (argc == 4)
-		{
-			move->julia_cr = ft_atoi_julia(argv[2]);
-			move->julia_ci = ft_atoi_julia(argv[3]);
-		}
-		else
-		{
-			move->julia_cr = -0.7;
-			move->julia_ci = 0.27015;
-		}
-		return (2);
-	}
-	ft_printf("Format correct : %s Mandelbrot\n", argv[0]);
-	ft_printf("Format correct : %s Julia <r> <i>\n", argv[0]);
-	return (-1);
-}
-
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {

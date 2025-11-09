@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:25:07 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/08 23:26:11 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 13:55:02 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_close_window(void *param)
 {
 	(void)param;
-	ft_printf ("Vous avez quitté\n");
+	ft_printf ("You have left");
 	exit(0);
 	return (0);
 }
@@ -54,7 +54,7 @@ int	ft_key(int key, void *param)
 	move = (t_mouvement *)param;
 	if (key == 65307 || key == 53)
 	{
-		ft_printf("Vous avez quitté\n");
+		ft_printf("You have left");
 		exit(0);
 	}
 	else if (key == 65362 || key == 126 || key == 65364 || key == 125 ||
@@ -97,12 +97,10 @@ int	ft_mouse(int key_mouse, int x, int y, void *param)
 	move = (t_mouvement *)param;
 	if (key_mouse == 4)
 	{
-		ft_printf("ZOOM +\n");
 		zoom = 0.9;
 	}
 	else if (key_mouse == 5)
 	{
-		ft_printf("ZOOM -\n");
 		zoom = 1.1;
 	}
 	else

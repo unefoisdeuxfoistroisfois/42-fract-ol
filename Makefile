@@ -6,13 +6,13 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/11 11:58:37 by britela-          #+#    #+#              #
-#    Updated: 2025/11/08 12:04:00 by britela-         ###   ########.fr        #
+#    Updated: 2025/11/09 14:16:18 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 NAME = fractol
-SRC = mlx.c event.c mandel.c julia.c libft.c
+SRC = mlx.c event.c mandel.c julia.c libft.c args.c
 OBJ = $(SRC:.c=.o)
 
 LOGO = "\033[1;38;5;208m\
