@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
+#    By: britela- <britela-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/11 11:58:37 by britela-          #+#    #+#              #
-#    Updated: 2025/11/09 14:16:18 by britela-         ###   ########.fr        #
+#    Updated: 2025/11/09 15:48:38 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ PRINTF_DIR  = ft_printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
 # Flags
-CFLAGS = -Wall -Wextra -Werror -g $(MLX_INC) -I$(PRINTF_DIR)
+CFLAGS = -Wall -Wextra -Werror -g -O3 $(MLX_INC) -I$(PRINTF_DIR)
 
 all: $(NAME)
 
