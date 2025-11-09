@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:25:07 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/09 13:55:02 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 14:26:49 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ int	ft_key(int key, void *param)
 		ft_printf("You have left");
 		exit(0);
 	}
-	else if (key == 65362 || key == 126 || key == 65364 || key == 125 ||
-		key == 65361 || key == 123 || key == 65363 || key == 124)
+	else if (key == 65362 || key == 126 || key == 65364 || key == 125
+		|| key == 65361 || key == 123 || key == 65363 || key == 124)
 	{
 		ft_move(move, key);
 		if (move->choice == 1)
@@ -89,8 +89,8 @@ void	ft_zoom(t_mouvement *move, double zoom)
 
 int	ft_mouse(int key_mouse, int x, int y, void *param)
 {
+	double		zoom;
 	t_mouvement	*move;
-	double	zoom;
 
 	(void)x;
 	(void)y;

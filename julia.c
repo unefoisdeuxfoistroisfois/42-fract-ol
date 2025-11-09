@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:07:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/08 23:30:15 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 14:31:28 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	ft_julia_color(t_julia *j, int max_iter)
 
 void	julia(t_data *img, t_mouvement *move)
 {
-	double				y;
-	double				x;
+	double		y;
+	double		x;
 	t_julia		j;
 
 	y = 0;
