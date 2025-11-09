@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 14:12:55 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/09 14:13:22 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 18:15:33 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	ft_check_julia(int argc, char **argv, t_mouvement *move)
 	}
 	else if (argc == 2)
 	{
-		move->julia_cr = -0.7;
-		move->julia_ci = 0.27015;
+		move->julia_cr = 0.285;
+		move->julia_ci = 0.01;
 	}
 	else
 	{
