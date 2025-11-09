@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/09 12:46:34 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 12:56:26 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_args(int argc, char **argv, t_mouvement *move)
 		return (2);
 	}
 	ft_printf("Format correct : %s Mandelbrot\n", argv[0]);
-	ft_printf("Format correct : %s Julia\n", argv[0]);
+	ft_printf("Format correct : %s Julia <r> <i>\n", argv[0]);
 	return (-1);
 }
 
