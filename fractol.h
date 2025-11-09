@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/08 23:53:23 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 12:52:47 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,12 @@ int	ft_mouse(int key_mouse, int x, int y, void *param);
 //mlx.c
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int	ft_args(int argc, char **argv, t_mouvement *move); 
+void	ft_init_fractol(t_mouvement *move, void **mlx, void **win);
+void	ft_run_fractol(t_mouvement *move, void *mlx, void *win, int choice);
 
 //libft
 int	ft_strcmp(char *s1, char *s2);
-double	ft_atof(char *str);
+double	ft_atoi_julia2(char *str, int i);
+double	ft_atoi_julia(char *str);
 
 #endif
