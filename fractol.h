@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/08 23:53:23 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 01:23:46 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define HEIGHT 800
 #endif
 
-# define MAX_ITER  200
+# define MAX_ITER  100
 
 #include "mlx.h"
 # include <stdio.h>

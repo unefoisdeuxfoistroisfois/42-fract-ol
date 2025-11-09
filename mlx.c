@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/08 23:22:36 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/09 01:27:55 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	ft_args(int argc, char **argv, t_mouvement *move)
 {
 	if (argc < 2)
 	{
-		ft_printf ("Format correct : %s <NomFractal>", argv[0]);
+		ft_printf ("Format correct : %s Mandelbrot\n", argv[0]);
+		ft_printf ("Format correct : %s Julia\n", argv[0]);
 		return (-1);
 	}
 	if (ft_strcmp(argv[1], "Mandelbrot") == 0)
@@ -35,7 +36,8 @@ int	ft_args(int argc, char **argv, t_mouvement *move)
 		}
 		return (2);
 	}
-	ft_printf("Fractales disponibles: Mandelbrot, Julia\n");
+	ft_printf ("Format correct : %s Mandelbrot\n", argv[0]);
+	ft_printf ("Format correct : %s Julia\n", argv[0]);
 	return (-1);
 }
 
