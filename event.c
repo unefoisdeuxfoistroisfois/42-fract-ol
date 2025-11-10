@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:25:07 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/10 17:20:12 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:43:26 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_close_window(void *param)
 {
 	t_mouvement	*move;
 
-	move =(t_mouvement *)param;
+	move = (t_mouvement *)param;
 	ft_clean(move);
 	ft_printf ("You have left");
 	exit(0);
