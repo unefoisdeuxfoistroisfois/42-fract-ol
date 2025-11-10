@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/10 00:54:54 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/10 13:40:37 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-void	ft_init_fractol(t_mouvement *move, void **mlx, void **win)
+void	ft_init_fractol(t_mouvement *move, void **mlx, void **win, int choice)
 {
 	*mlx = mlx_init();
 	*win = mlx_new_window(*mlx, WIDTH, HEIGHT, "fractol");
@@ -28,10 +28,20 @@ void	ft_init_fractol(t_mouvement *move, void **mlx, void **win)
 	move->img.addr = mlx_get_data_addr(move->img.img,
 			&move->img.bits_per_pixel, &move->img.line_length,
 			&move->img.endian);
-	move->r1 = -2.5;
-	move->r2 = 1.5;
-	move->i1 = -2.0;
-	move->i2 = 2.0;
+	if (choice == 1)
+	{
+		move->r1 = -2.5;
+		move->r2 = 1.5;
+		move->i1 = -2.0;
+		move->i2 = 2.0;
+	}
+	else
+	{
+		move->r1 = -2.0;
+		move->r2 = 2.0;
+		move->i1 = -2.0;
+		move->i2 = 2.0;
+	}
 	move->mlx = *mlx;
 	move->win = *win;
 }
@@ -60,7 +70,7 @@ int	main(int argc, char **argv)
 	if (choice == -1)
 		return (-1);
 	move.choice = choice;
-	ft_init_fractol(&move, &mlx_connection, &mlx_window);
+	ft_init_fractol(&move, &mlx_connection, &mlx_window, choice);
 	ft_run_fractol(&move, mlx_connection, mlx_window, choice);
 	return (0);
 }
