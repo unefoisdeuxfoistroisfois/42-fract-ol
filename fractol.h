@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:12 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/10 13:40:21 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:17:55 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ double	ft_atoi_julia(char *str);
 int		ft_check_mandelbrot(int argc, char **argv);
 int		ft_check_julia(int argc, char **argv, t_mouvement *move);
 int		ft_args(int argc, char **argv, t_mouvement *move);
+void	ft_clean(t_mouvement *move);
 
 #endif
