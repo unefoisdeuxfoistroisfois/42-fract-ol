@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/10 13:48:13 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/10 13:49:14 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_init_fractol(t_mouvement *move, void **mlx, void **win, int choice)
 		move->i1 = -2.0;
 		move->i2 = 2.0;
 	}
-	else if (choise == 2)
+	else if (choice == 2)
 	{
 		move->r1 = -2.0;
 		move->r2 = 2.0;
