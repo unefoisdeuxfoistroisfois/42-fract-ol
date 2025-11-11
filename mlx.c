@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:58:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/11/10 13:49:14 by britela-         ###   ########.fr       */
+/*   Updated: 2025/11/11 01:53:40 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 void	ft_init_fractol(t_mouvement *move, void **mlx, void **win, int choice)
 {
 	*mlx = mlx_init();
-	*win = mlx_new_window(*mlx, WIDTH, HEIGHT, "fractol");
+	*win = mlx_new_window(*mlx, WIDTH, HEIGHT, "fract-ol");
 	move->img.img = mlx_new_image(*mlx, WIDTH, HEIGHT);
 	move->img.addr = mlx_get_data_addr(move->img.img,
 			&move->img.bits_per_pixel, &move->img.line_length,
